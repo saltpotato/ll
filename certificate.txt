@@ -1,0 +1,1 @@
+https://blog.friedlandreas.net/2015/08/pfx-mit-openssl-in-key-und-crt-umwandeln/

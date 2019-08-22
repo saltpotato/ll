@@ -1,0 +1,62 @@
+{
+    "positions": [
+        {
+            "from": "Juli 2018--heute",
+            "type": "Softwareentwickler",
+            "org": "Beissbarth GmbH",
+            "orglink": "https://beissbarth-online.com/de/home/",
+            "where": "München",
+            "does": "Fahrwerkvermessung, Bremsenprüfung, Prüfstrassen und Scheinwerfereinstellung",
+            "topics": [
+                "Weiterentwicklung für bestehende Bremsen Prüfsstandssoftware \\0,ICPerform",
+                "Mitentwicklung ICPerform-Car für zweiachsige PKW",
+                "Entwicklung eines Zwischenreleases für ICperform-Truck",
+                "Betreuung der Anbindung bestehender \\1,MRS-433 Druckluftsensoren bezüglich Wegfahralarm und Messstetigkeiten",
+                "Entwickeln der .net Schnittstelle für Druckluftsensoren neuer Generation"
+            ],
+            "href": [
+                "http://www.icperform.com", 
+                "https://www.amandaequipment.com/en/equipment/break-and-chassis-equipment/break-service-equipment-accessories/brake-system-air-pressure-gauge-set-mrs-433"
+            ]
+        },
+        {
+            "from": "April 2014--Juni 2018",
+            "type": "Softwareentwickler",
+            "org": "Distec GmbH",
+            "orglink": "https://www.distec.de/unternehmen/ueber-distec/",
+            "where": "Germering",
+            "does": "Spezialist für LCD Flachbildschirm-Lösungen",
+            "topics": [
+                "VideoPoster Mediaplayer Anwendung \\0,ACC3",
+                "\\1,WebPoster-Firmware, Debian Wheezy auf Jessie Portierung",
+                "\\2,VideoPoster-III",
+                "Weiterentwicklung der Modifikation \\3,LED-Anzeigen am Flughafen San Francisco",
+                "\\4,USB-Display Treiber (Windows 7 und 10 und WDK, Buildsystem), zusammen mit \\5,Datronic",
+                "C++ Tool zur Produktion des Raspberry Pi compute module boards \\6,Artista-Iot",
+                "Evaluation von Windows-Iot auf Artista IoT zur Verwendung als HMI-Platform",
+                "Erstellen einer QML \\7,Demo-Videos",
+                "C# Tool für Helligkeitskalibration und -Profiling mit den Luxmetern i1display-pro und Gossen-Mavolux unter Verwendung von \\8,Argyll-CMS",
+                "Maintanace für \\9,Chandler/Mars/SmartLed-Rover und -Prep Apps",
+                "Golang Tool zur Boardkonfiguration mit RS232",
+                "Powershell Buildskripte für Debian-builds mit VirtualBox (vboxmanage)",
+                "Vereinfachter Kaffeeautomat-HMI mit \\10,Embedded-Wizard",
+                "Umstellung Builds auf Symantec Extended Validation Code Signing",
+                "Umstellung Builds von Qt4 auf Qt5",
+                "Ansprechpartner rund um Windowsprogramme innerhalb der Entwicklunsabteilung"
+            ],
+            "href": [
+                "https://www.distec.de/service/downloads/mediaplayer-downloads/", 
+                "http://www.datadisplay-group.com/fileadmin/pdf/Finished_products/WEBPOSTER/Datasheet_WEB-Poster.pdf",
+                "http://www.datadisplay-group.com/tft-controller/industrial-mediaplayers/videoposter-iii/",
+                "https://www.datadisplay-group.de/produkte/kundenspezifische-loesungen/referenzprojekte/",
+                "http://www.datadisplay-group.com/tft-controller/tft-controller-usb-lan/artistausb-eco/",
+                "http://http://www.datronic.de//",
+                "https://www.datadisplay-group.de/produkte/kitloesungen/mit-arm-raspberry-pi/",
+                "https://www.youtube.com/watch?v=tnY_23eRoyU",
+                "https://www.argyllcms.com/",
+                "https://www.distec.de/produkte/tft-controller/konfigurations-software/",
+                "https://www.embedded-wizard.de/"
+            ]
+        }
+    ]
+}

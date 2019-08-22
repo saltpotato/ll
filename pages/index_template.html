@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <style>
+        .table-dark.table-bordered {
+            border: 20;
+        }
+    </style>
+</head>
+<style>
+    hr.style1 {
+        border-top: 5px solid rgb(56, 115, 178);
+        margin-bottom: 8px;
+    }
+
+    body {
+        background-color: rgba(52, 84, 88, 0.171);
+    }
+
+    .list-group-item-dark {
+        background-color: rgba(52, 84, 88, 0);
+        border-top-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+    }
+</style>
+
+<body>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <hr class="style1">
+                                </th>
+                                <th>Persönliche Daten</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Geboren am</td>
+                                <td>25.05.1978 in Singen am Hohentwiel</td>
+                            </tr>
+                            <tr>
+                                <td>Wohnort</td>
+                                <td>Eschenbachstrasse 29, 81549 München</td>
+                            </tr>
+                            <tr>
+                                <td>Handy</td>
+                                <td>015782951831</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <hr class="style1">
+                                </th>
+                                <th>Berufserfahrung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{range $p := .}}
+                            <tr>
+                                <td>{{$p.From}}</td>
+                                <td>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <strong>{{$p.Type}}</strong>
+                                            </div>
+                                            <div class="col-sm">
+                                                <i>{{$p.Org}}</i>
+                                            </div>
+                                            <div class="col-sm">
+                                                {{$p.Where}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                    {{$p.Does}}
+                                            </div>
+                                        </div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <ul class="list-group">
+                                                            {{range $t := $p.Topics}}
+                                                        <li class="list-group-item-dark">
+                                                            {{range $s := Split $t " "}}
+                                                            {{$text := GetHREFText $p $s}}
+                                                                {{ if $text }}
+                                                                    <a href={{ GetHREFText $p $s }}>{{StripHREFIndicator $s}}</a>
+                                                                {{ else }}
+                                                                    {{$s }}
+                                                                {{end}}
+                                                            {{end}}
+                                                        </li>
+                                                            {{end}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{end}}
+                            <tr>
+                                <td>Juli 2018 - heute</td>
+                                <td>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <strong>Softwareentwickler</strong>
+                                            </div>
+                                            <div class="col-sm">
+                                                <i>Beissbarth GmbH</i>
+                                            </div>
+                                            <div class="col-sm">
+                                                München
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                Fahrwerkvermessung, Bremsenprüfung, Prüfstrassen und
+                                                Scheinwerfereinstellung
+                                            </div>
+                                        </div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item-dark">Weiterentwicklung für
+                                                            bestehende Bremsen Prüfsstandssoftware <a
+                                                                href="http://www.icperform.com/">ICPerform</a></li>
+                                                        <li class="list-group-item-dark">Mitentwicklung ICPerform-Car
+                                                            für zweiachsige PKW</li>
+                                                        <li class="list-group-item-dark">Entwicklung eines
+                                                            Zwischenreleases für ICperform-Truck </li>
+                                                        <li class="list-group-item-dark">Betreuung der Anbindung
+                                                            bestehender <a
+                                                                href="https://www.amandaequipment.com/en/equipment/break-and-chassis-equipment/break-service-equipment-accessories/brake-system-air-pressure-gauge-set-mrs-433">MRS-433</a>
+                                                            Druckluftsensoren bezüglich Wegfahralarm und
+                                                            Messstetigkeiten</li>
+                                                        <li class="list-group-item-dark">Entwickeln der .net
+                                                            Schnittstelle für Druckluftsensoren neuer Generation
+                                                            <div class="container">
+                                                                <ul class="list-group">
+                                                                    <li class="list-group-item-dark">Weiterentwicklung
+                                                                        für bestehende Bremsen Prüfsstandssoftware <a
+                                                                            href="http://www.icperform.com/">ICPerform</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Wohnort</td>
+                                <td>Eschenbachstrasse 29, 81549 München</td>
+                            </tr>
+                            <tr>
+                                <td>Handy</td>
+                                <td>015782951831</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+    </table>
+</body>
+
+</html>
