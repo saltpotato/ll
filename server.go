@@ -13,16 +13,25 @@ import (
 	"time"
 )
 
+// Position a position in a company, a cv-line
 type Position struct {
 	From, Type, Org, OrgLink, Where, Does string
 	Topics                                []string
 	Href                                  []string
 }
 
-type Positions struct {
-	Poss []Position `json:"positions"`
+//Personal Stammdaten
+type Personal struct {
+	BirthDate, BirthPlace, Address, Cell string
 }
 
+//Positions cv struct
+type Positions struct {
+	personal Personal
+	Poss     []Position `json:"positions"`
+}
+
+//ServeIndexHTML serve index html
 func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
 
 	funcMap := template.FuncMap{

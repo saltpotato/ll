@@ -1,4 +1,11 @@
 {
+    "personal":
+        {
+            "birthdate": "25.05.1978",
+            "birthplace":"Singen am Hohentwiel",
+            "address":"Eschenbachstrasse 29, 81549 München",
+            "cell":"+4915782951831"
+        },
     "positions": [
         {
             "from": "Juli 2018--heute",
@@ -31,18 +38,18 @@
                 "\\1,WebPoster-Firmware, Debian Wheezy auf Jessie Portierung",
                 "\\2,VideoPoster-III",
                 "Weiterentwicklung der Modifikation \\3,LED-Anzeigen am Flughafen San Francisco",
-                "\\4,USB-Display Treiber (Windows 7 und 10 und WDK, Buildsystem), zusammen mit \\5,Datronic",
+                "\\4,USB-Display Treiber Desktop Extension/Cloning, zusammen mit \\5,Dienstleister",
                 "C++ Tool zur Produktion des Raspberry Pi compute module boards \\6,Artista-Iot",
                 "Evaluation von Windows-Iot auf Artista IoT zur Verwendung als HMI-Platform",
                 "Erstellen einer QML \\7,Demo-Videos",
-                "C# Tool für Helligkeitskalibration und -Profiling mit den Luxmetern i1display-pro und Gossen-Mavolux unter Verwendung von \\8,Argyll-CMS",
+                "C# Tool für Luminanzkalibration und -profiling mit Luxmetern \\11,i1Display-Pro und \\12,Gossen-Mavolux unter Verwendung von \\8,Argyll-CMS",
                 "Maintanace für \\9,Chandler/Mars/SmartLed-Rover und -Prep Apps",
                 "Golang Tool zur Boardkonfiguration mit RS232",
                 "Powershell Buildskripte für Debian-builds mit VirtualBox (vboxmanage)",
                 "Vereinfachter Kaffeeautomat-HMI mit \\10,Embedded-Wizard",
                 "Umstellung Builds auf Symantec Extended Validation Code Signing",
-                "Umstellung Builds von Qt4 auf Qt5",
-                "Ansprechpartner rund um Windowsprogramme innerhalb der Entwicklunsabteilung"
+                "Umstellung der meisten Qt-Anwendungen von Qt4 auf Qt5",
+                "Ansprechpartner rund um Windows innerhalb der Entwicklunsabteilung"
             ],
             "href": [
                 "https://www.distec.de/service/downloads/mediaplayer-downloads/", 
@@ -50,12 +57,14 @@
                 "http://www.datadisplay-group.com/tft-controller/industrial-mediaplayers/videoposter-iii/",
                 "https://www.datadisplay-group.de/produkte/kundenspezifische-loesungen/referenzprojekte/",
                 "http://www.datadisplay-group.com/tft-controller/tft-controller-usb-lan/artistausb-eco/",
-                "http://http://www.datronic.de//",
+                "https://spacedesk.net/de/",
                 "https://www.datadisplay-group.de/produkte/kitloesungen/mit-arm-raspberry-pi/",
                 "https://www.youtube.com/watch?v=tnY_23eRoyU",
                 "https://www.argyllcms.com/",
                 "https://www.distec.de/produkte/tft-controller/konfigurations-software/",
-                "https://www.embedded-wizard.de/"
+                "https://www.embedded-wizard.de/",
+                "https://www.xrite.com/de/categories/calibration-profiling/i1display-pro",
+                "https://gossen-photo.de/mavolux-5032-b-usb/"
             ]
         }
     ]
