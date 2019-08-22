@@ -15,9 +15,9 @@ import (
 
 // Position a position in a company, a cv-line
 type Position struct {
-	From, Type, Org, OrgLink, Where, Does string
-	Topics                                []string
-	Href                                  []string
+	From, Type, Org, OrgLink, Where, Does, MyArea string
+	Topics                                        []string
+	Href                                          []string
 }
 
 //Personal Stammdaten
