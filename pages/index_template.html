@@ -81,7 +81,15 @@
                                     <div class="col-sm">
                                         <ul class="list-group">
                                             {{range $t := $p.Topics}}
-                                            <li class="list-group-item-dark">
+                                            
+                                                {{ if  eq $t "\\beginitemize" }}
+                                                <div class="container">
+                                                    <ul class="list-group">
+                                                {{ else if eq $t "\\enditemize" }}
+                                                    </ul>
+                                                </div>
+                                                {{ else }}
+                                                <li class="list-group-item-dark">
                                                 {{range $s := Split $t " "}}
                                                 {{$text := GetHREFText $p $s}}
                                                 {{ if $text }}
@@ -91,6 +99,9 @@
                                                 {{end}}
                                                 {{end}}
                                             </li>
+                                                {{ end }}
+
+                                           
                                             {{end}}
                                         </ul>
                                     </div>

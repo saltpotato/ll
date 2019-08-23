@@ -59,6 +59,9 @@ func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
 			}
 			return ""
 		},
+		"StartsWithDash": func(task string) bool {
+			return strings.HasPrefix(task, "-")
+		},
 	}
 
 	jsonFile, err := os.Open("positions.json")
