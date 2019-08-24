@@ -1,0 +1,6 @@
+{{range $p := .}}
+\cventry{ {{$p.From}} }{ {{$p.Type}} }{ {{$p.Org}} }{ {{$p.Where}} }{}{ {{$p.Does}}
+\begin{itemize}{{range $t := $p.Topics}}{{ if  eq $t "\\beginitemize" }}\begin{itemize}{{ else if eq $t "\\enditemize" }}\end{itemize}{{ else }}
+\item{{range $s := Split $t " "}}{{$text := GetHREFText $p $s}}{{ if $text }}\myhref{ {{ GetHREFText $p $s }} }{ {{StripHREFIndicator $s}} }{{ else }}{{ $s}}{{end}}{{end}}{{end}}{{end}}    
+\end{itemize}
+{{end}}

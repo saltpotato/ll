@@ -3,13 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
+	"text/template"
 	"time"
 )
 
@@ -31,38 +31,38 @@ type Positions struct {
 	Poss     []Position `json:"positions"`
 }
 
+var funcMap = template.FuncMap{
+	"Split": strings.Split,
+	"GetHREFText": func(position Position, token string) string {
+		if strings.HasPrefix(token, "\\") {
+
+			numPrefixed := token[1:]
+			numNTask := strings.Split(numPrefixed, ",")
+
+			if len(numNTask) < 2 {
+				return ""
+			}
+
+			idx, _ := strconv.Atoi(numNTask[0])
+			return position.Href[idx]
+		}
+		return ""
+	},
+	"StripHREFIndicator": func(token string) string {
+
+		idx := strings.Index(token, ",")
+		if idx != -1 && idx+1 < len(token) {
+			return token[idx+1:]
+		}
+		return ""
+	},
+	"StartsWithDash": func(task string) bool {
+		return strings.HasPrefix(task, "-")
+	},
+}
+
 //ServeIndexHTML serve index html
 func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
-
-	funcMap := template.FuncMap{
-		"Split": strings.Split,
-		"GetHREFText": func(position Position, token string) string {
-			if strings.HasPrefix(token, "\\") {
-
-				numPrefixed := token[1:]
-				numNTask := strings.Split(numPrefixed, ",")
-
-				if len(numNTask) < 2 {
-					return ""
-				}
-
-				idx, _ := strconv.Atoi(numNTask[0])
-				return position.Href[idx]
-			}
-			return ""
-		},
-		"StripHREFIndicator": func(token string) string {
-
-			idx := strings.Index(token, ",")
-			if idx != -1 && idx+1 < len(token) {
-				return token[idx+1:]
-			}
-			return ""
-		},
-		"StartsWithDash": func(task string) bool {
-			return strings.HasPrefix(task, "-")
-		},
-	}
 
 	jsonFile, err := os.Open("positions.json")
 	// if we os.Open returns an error then handle it
@@ -93,8 +93,41 @@ func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func main() {
+func exportLatex() {
+	jsonFile, err := os.Open("positions.json")
+	// if we os.Open returns an error then handle it
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	fmt.Println("Successfully Opened positions.json")
 
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	// we initialize our Users array
+	var positions Positions
+
+	// we unmarshal our byteArray which contains our
+	// jsonFile's content into 'users' which we defined above
+	json.Unmarshal(byteValue, &positions)
+
+	tmpl, err := template.New("latex.tt").Funcs(funcMap).ParseFiles("latex.tt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	postex, err := os.Create("positions.tex")
+	defer postex.Close()
+	err = tmpl.Execute(postex, positions.Poss)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
+func main() {
+	exportLatex()
+	return
 	http.HandleFunc("/bower_components/", func(w http.ResponseWriter, r *http.Request) {
 		path := "wwwroot/" + r.URL.Path[1:]
 		if strings.HasSuffix(path, ".css") {
