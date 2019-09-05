@@ -1,0 +1,85 @@
+{{- define "entries" -}}
+{{range $p := . -}}
+\cventry{ {{- $p.From -}} }{ {{- $p.Type -}} }{ {{- $p.Org -}} }{ {{- $p.Where -}} }{}{ {{- $p.Does -}} {{if $p.Topics}} \begin{itemize} {{else -}} } {{end}}
+    {{- range $t := $p.Topics}}
+        {{- if  eq $t "\\beginitemize" }}
+\begin{itemize}
+        {{- else if eq $t "\\enditemize" }}
+\end{itemize}
+        {{- else }}
+\item 
+            {{- range $s := Split $t " "}}
+                {{- $text := GetHREFText $p $s}}
+                {{- if $text -}} 
+{{" "}}\myhref{ {{- GetHREFText $p $s -}} }{ {{- StripHREFIndicator $s -}} }
+                {{- else }} 
+{{- " "}}{{$s}}
+                {{- end}}
+            {{- end}}
+        {{- end}}
+    {{- end}}    
+{{if $p.Topics }} \end{itemize} } {{ end }}
+{{end}}
+{{- end -}}
+
+\documentclass[11pt,a4paper]{moderncv}
+\thispagestyle{empty}
+% moderncv themes
+\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\AtBeginDocument{\recomputelengths}         
+%\AtBeginDocument{\hypersetup{hidelinks,linkcolor=blue}}
+\usepackage{pdfpages}           
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\newcommand{\myhref}[3][color1]{\href{#2}{\color{#1}{#3}}}%
+
+\firstname{Martin}
+\familyname{Schulze}
+\photo[64pt]{../images/IMG_9105_smaller.JPG}                         % '64pt' is the height the picture must be resized to and '+picture' is the name of the picture file; optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%------------------------------6----------------------------------------------------
+\def\house{\hbox{\kern3pt \vbox to13pt{}% 
+   \pdfliteral{q 0 0 m 0 5 l 5 10 l 10 5 l 10 0 l 7 0 l 7 5 l 3 5 l 3 0 l f
+               1 j 1 J -2 5 m 5 12 l 12 5 l S Q }%
+   \kern 13pt}}
+
+\begin{document}
+\newgeometry{top=23mm,bottom=1cm,left=27mm,right=23mm,nohead,nofoot}
+
+\maketitle
+\section{Persönliche Daten}
+\cvline{Geboren am}{25.05.1978 in Singen am Hohentwiel}
+\cvline{\house}{Eschenbachstraße 29, 81549 München}
+\cvline{\mobilephonesymbol}{\href{tel:015236362571}{01523 6 36 25 71} }
+\section{Berufserfahrung}
+{{ template "entries" .Professional }}
+\section{Studium}
+{{ template "entries" .Study }}
+\section{Schul- und Berufsausbildung}
+{{ template "entries" .Education }}
+\section{Programmiererfahrung}
+\cvline{.Net}{C\#, WPF, WinForms, Visual Studio 15/17, Powershell}
+\cvline{C++}{C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk}
+\cvline{Datenbanken}{MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL}
+\cvline{Sonstiges}{Tortoise Svn, - Git, Wix, InnoSetup }
+\section{Hobbies}
+\cvline{}{Laufen, E-Biken, Surfen}
+
+\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+\nocite{*}
+\bibliographystyle{plain}
+
+\end{document}

@@ -5,7 +5,7 @@
         "address": "Eschenbachstrasse 29, 81549 München",
         "cell": "+4915782951831"
     },
-    "positions": [
+    "professional": [
         {
             "from": "Juli 2018--heute",
             "type": "Softwareentwickler",
@@ -155,6 +155,56 @@
                 "Konvertierung Konfigurationsdaten von Ini auf Xml"
             ],
             "href": []
+        }
+    ],
+    "study": [
+        {
+            "from": "1998--2003",
+            "type": "Technischer Informatik",
+            "org": "Fachhochschule Konstanz",
+            "orglink": "https://www.htwg-konstanz.de/",
+            "where": "Konstanz",
+            "does": "Vertiefungsrichtung Kommunikationssysteme und Softwareentwicklung"
+        },
+        {
+            "from": "März--Dez. 2002",
+            "type": "Diplomarbeit",
+            "org": "University of the Western Cape",
+            "orglink": "https://www.uwc.ac.za/Pages/default.aspx",
+            "where": "Bellville, Südafrika",
+            "does": "Gesichtsausdruckserkennung mit Support Vector Machines"
+        },
+        {
+            "from": "März 1999 und 2001 für je ein Semester",
+            "type": "Praxissemester",
+            "org": "Aluminium-Walzwerke Singen GmbH und Georg Fischer Piping Systems AG",
+            "orglink": "",
+            "where": "Singen und Schaffhausen (Schweiz)",
+            "does": "in IT Administration und Software",
+            "myarea": "",
+            "topics": [
+                "Weiterentwicklung automatischer Softwareverteilung im Intranet",
+                "Netzwerkmonitor als Intranet-Website (Apache webserver)"
+            ],
+            "href": []
+        }
+    ],
+    "education": [
+        {
+            "from": "1994--1996",
+            "type": "Berufskolleg 1+2",
+            "org": "Kaufmännische Schulen",
+            "orglink": "http://www.bsz-radolfzell.de",
+            "where": "Radolfzell",
+            "does": "Fachhochschulreife"
+        },
+        {
+            "from": "1986--1994",
+            "type": "Realschule",
+            "org": "Ekkehardt Realschule",
+            "orglink": "http://www.ekkehard-rs.de/",
+            "where": "Singen",
+            "does": "Mittlere Reife"
         }
     ]
 }

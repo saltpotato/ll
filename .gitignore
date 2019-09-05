@@ -820,3 +820,10 @@ https-server.crt
 https-server.key
 server.exe
 positions.tex
+wwwroot/tex/texput.log
+wwwroot/tex/cv.out
+wwwroot/tex/cv.log
+wwwroot/tex/cv.aux
+wwwroot/tex/cv.tex
+pages/cv.pdf
+texput.log
