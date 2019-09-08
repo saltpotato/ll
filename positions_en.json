@@ -1,57 +1,64 @@
 {
     "personal": {
         "birthdate": "25.05.1978",
-        "birthplace": "Singen am Hohentwiel",
-        "address": "Eschenbachstrasse 29, 81549 München",
+        "birthplace": "Singen at Hohentwiel",
+        "address": "Eschenbachstr. 29, 81549 Munich, Germany",
         "cell": "+4915782951831"
     },
-    "professional": [
+    "titles": {
+        "professional":"Professional experience",
+        "study": "Study", 
+        "school": "Education"
+    },
+    "professional": 
+    [
         {
-            "from": "Juli 2018--heute",
-            "type": "Softwareentwickler",
+            "from": "June 2018--today",
+            "type": "Software developer",
             "org": "Beissbarth GmbH",
-            "orglink": "https://beissbarth-online.com/de/home/",
-            "where": "München",
-            "does": "Fahrwerkvermessung, Bremsenprüfung, Prüfstrassen und Scheinwerfereinstellung",
-            "myarea": "Bremsenprüfung",
+            "orglink": "https://beissbarth-online.com/en/home/",
+            "where": "Munich",
+            "does": "Wheel alignment, brake testers and vehicle testing, head light testers",
+            "myarea": "Brake testers",
             "topics": [
-                "Weiterentwicklung für bestehende Bremsen Prüfsstandssoftware \\0,ICPerform",
-                "Mitentwicklung ICPerform-Car für zweiachsige PKW",
-                "Entwicklung eines Zwischenreleases für ICperform-Truck",
-                "Betreuung der Anbindung bestehender \\1,MRS-433 Druckluftsensoren bezüglich Wegfahralarm und Messstetigkeiten",
-                "Entwickeln der .net Schnittstelle für Druckluftsensoren neuer Generation",
-                "Gelegentlicher vor Ort Einsatz in den Werkstätten (Bayern, BW)"
+                "Weiterentwicklung von Bremsenprüfsstand Software \\0,ICPerform-Truck",
+                "Co-development \\1,ICPerform-Car for two-axle cars",
+                "Creation of an interim release for ICperform-Truck",
+                "Ensure \\2,MRS-433 compressed air sensors driving alarm reliability and measuring continuity",
+                "Coupling new generation compressed air sensors",
+                "Occasional on-site commitment in workshops"
             ],
             "href": [
                 "http://www.icperform.com",
+                "https://play.google.com/store/apps/details?id=beissbarth.icperform.tablet.car&hl=en_EN",
                 "https://www.amandaequipment.com/en/equipment/break-and-chassis-equipment/break-service-equipment-accessories/brake-system-air-pressure-gauge-set-mrs-433"
             ]
         },
         {
-            "from": "April 2014--Juni 2018",
-            "type": "Softwareentwickler",
+            "from": "April 2014--June 2018",
+            "type": "Software developer",
             "org": "Distec GmbH",
             "orglink": "https://www.distec.de/unternehmen/ueber-distec/",
             "where": "Germering",
-            "does": "Spezialist für LCD Flachbildschirm-Lösungen",
+            "does": "Specialist for LCD flat screen solutions",
             "myarea": "R&D",
             "topics": [
-                "VideoPoster Mediaplayer Anwendung \\0,ACC3",
-                "\\1,WebPoster-Firmware, Debian Wheezy auf Jessie Portierung",
+                "VideoPoster mediaplayer application \\0,ACC3",
+                "\\1,WebPoster-Firmware, Debian based",
                 "\\2,VideoPoster-III",
-                "Weiterentwicklung der Modifikation \\3,LED-Anzeigen am Flughafen San Francisco",
-                "\\4,USB-Display Treiber Desktop Extension/Cloning, zusammen mit \\5,Treiberhersteller",
-                "C++ Tool zur Produktion des Raspberry Pi compute module boards \\6,Artista-Iot",
-                "Evaluation von Windows-Iot auf Artista IoT zur Verwendung als HMI-Platform",
-                "Erstellen einer QML \\7,Demo-Videos",
-                ".Net Tool für Luminanzkalibration und -profiling mit Luxmetern \\11,i1Display-Pro und \\12,Gossen-Mavolux unter Verwendung von \\8,Argyll-CMS",
-                "Maintanace für \\9,Chandler/Mars/SmartLed-Rover und -Prep Apps",
-                "Golang Tool zur Boardkonfiguration mit RS232",
-                "Powershell Buildskripte für Debian-builds mit VirtualBox (vboxmanage)",
-                "Vereinfachter Kaffeeautomat-HMI mit \\10,Embedded-Wizard",
-                "Umstellung Builds auf Symantec Extended Validation Code Signing",
-                "Umstellung der meisten Qt-Anwendungen von Qt4 auf Qt5",
-                "Ansprechpartner rund um Windows innerhalb der Entwicklunsabteilung"
+                "Maintain \\3,SFO airport modification",
+                "Maintain \\4,USB desktop extension driver in coordination with \\5,driver-vendor",
+                "C++ production tool for \\6,Artista-Iot",
+                "Evaluation of Windows-Iot for Artista-IoT to be used as HMI platform",
+                "Various QML \\7,Demos",
+                "\\10,Embedded-Wizard demo for a coffee vending machine",
+                ".Net tool for luminance calibration und -profiling with luxmeters \\11,i1Display-Pro und \\12,Gossen-Mavolux with \\8,Argyll-CMS",
+                "Maintanace of \\9,Chandler/Mars/SmartLed-Rover and -Prep apps",
+                "Go tool for configuration of boards over serial",
+                "Maintain buildsystem for windows and debian-builds",
+                "Change builds to Symantec EV Code Signing",
+                "Change Qt-Apps from Qt4 to Qt5",
+                "Act as hands-on consultant within the Windows-application landscape"
             ],
             "href": [
                 "https://www.distec.de/service/downloads/mediaplayer-downloads/",
@@ -71,10 +78,10 @@
         },
         {
             "from": "Januar 2012--Oktober 2013",
-            "type": "Softwareentwickler",
+            "type": "Software developer",
             "org": "CreateCtrl AG",
             "orglink": "https://www.createctrl.com/de",
-            "where": "München",
+            "where": "Munich",
             "does": "Software für TV, VoD und Radio",
             "myarea": "Tool-Familie „Explorer“, „Control Center“, „Planung und Redaktion“ und die „Programminformation“",
             "topics": [
@@ -94,10 +101,10 @@
         },
         {
             "from": "Juli 2005--Dezember 2011",
-            "type": "Softwareentwickler",
+            "type": "Software developer",
             "org": "ZIP Industrieplanung",
             "orglink": "http://www.zip.de",
-            "where": "München",
+            "where": "Munich",
             "does": "Systeme zur Fabrik- und Logistikplanung",
             "myarea": "Entwicklung von Malaga-V3",
             "topics": [
@@ -125,10 +132,10 @@
         },
         {
             "from": "November 2003--Juni 2005",
-            "type": "Softwareentwickler",
+            "type": "Software developer",
             "org": "WSW Software GmbH",
             "orglink": "https://www.wsw.de/",
-            "where": "Gauting (München)",
+            "where": "Gauting (Munich)",
             "does": "Hoch konfigurierbare IT-Logistiklösungen auf Basis von SAP und .Net",
             "myarea": "JIT/JIS Systeme",
             "topics": [
@@ -144,7 +151,7 @@
         },
         {
             "from": "März 2003--Oktober 2003",
-            "type": "Freiberuflicher Softwareentwickler",
+            "type": "Freiberuflicher Software developer",
             "org": "Baumer Group (ehem. Massen Machine Vision)",
             "orglink": "https://www.baumer.com",
             "where": "Konstanz",

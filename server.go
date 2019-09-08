@@ -30,6 +30,7 @@ type Personal struct {
 //CV struct
 type CV struct {
 	Personal     Personal
+	Titles       map[string]string
 	Professional []Position `json:"professional"`
 	Study        []Position `json:"study"`
 	Education    []Position `json:"education"`
@@ -63,18 +64,41 @@ var funcMap = map[string]interface{}{
 	"StartsWithDash": func(task string) bool {
 		return strings.HasPrefix(task, "-")
 	},
+	"enDe": func(en, de string) string {
+		isEn := cvJSONFile == "positions_en.json"
+		if isEn {
+			return en
+		}
+		return de
+	},
+	"lang": func() string {
+		isEn := cvJSONFile == "positions_en.json"
+		if isEn {
+			return "en"
+		}
+		return ""
+	},
+	"flagIcon": func(lang string) string {
+		isEn := lang == "en"
+		if isEn {
+			return "flag-icon flag-icon-us"
+		}
+		return "flag-icon flag-icon-us"
+
+	},
 }
+
+var cvJSONFile = "positions_de.json"
 
 //ServeIndexHTML serve index html
 func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
 
-	jsonFile, err := os.Open("positions.json")
+	jsonFile, err := os.Open(cvJSONFile)
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("Successfully Opened positions.json")
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
@@ -97,14 +121,22 @@ func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
+func switchToEN(w http.ResponseWriter, r *http.Request) {
+	cvJSONFile = "positions_en.json"
+	ServeIndexHTML(w, r)
+}
+func switchToDE(w http.ResponseWriter, r *http.Request) {
+	cvJSONFile = "positions_de.json"
+	ServeIndexHTML(w, r)
+}
+
 func exportLatex(w http.ResponseWriter, r *http.Request) {
-	jsonFile, err := os.Open("positions.json")
+	jsonFile, err := os.Open(cvJSONFile)
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("Successfully Opened positions.json")
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
@@ -145,6 +177,8 @@ func exportLatex(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
+	http.HandleFunc("/en/", switchToEN)
+	http.HandleFunc("/de/", switchToDE)
 	http.HandleFunc("/cv.pdf", exportLatex)
 	http.HandleFunc("/bower_components/", func(w http.ResponseWriter, r *http.Request) {
 		path := "wwwroot/" + r.URL.Path[1:]

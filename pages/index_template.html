@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Martin Schulze</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/popper.js/dist/umd/popper.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
     <style>
         .table-dark.table-bordered {
             border: 20;
@@ -35,7 +37,29 @@
 </style>
 
 <body>
-    <a href="cv.pdf">HTML-CSS-Übersicht als PDF</a> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Martin Schulze</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/{{lang}}">{{- enDe "Curriculum Vitae" "Lebenslauf" -}}  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/cv.pdf{{lang}}">{{- enDe "Show PDF" "Zeige PDF" -}}</a>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/{{lang}}" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{- enDe "English" "Deutsch" -}}</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            {{ if eq lang ""}}
+                            <a class="dropdown-item" href="/en"><span class="flag-icon flag-icon-us"> </span>English</a>
+                            {{ else }}
+                            <a class="dropdown-item" href="/de"><span class="flag-icon flag-icon-de"> </span>Deutsch</a>
+                            {{ end }}
+                        </div>
+                    </li>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">
@@ -53,7 +77,7 @@
         </div>
         <div class="row">
             <div class="col-sm">
-                Berufserfahrung
+                {{- index .Titles "professional" -}}
                 {{- block "entries" .Professional -}}
                 {{range $p := .}}
                 <div class="row">
@@ -114,16 +138,16 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-sm">
-                    Studium
-                    {{- template "entries" .Study -}}
-                </div>
+            <div class="col-sm">
+                {{- index .Titles "study" -}}
+                {{- template "entries" .Study -}}
+            </div>
         </div>
         <div class="row">
-                <div class="col-sm">
-                    Schul- und Berufsausbildung
-                    {{- template "entries" .Education -}}
-                </div>
+            <div class="col-sm">
+                {{- index .Titles "education" -}}
+                {{- template "entries" .Education -}}
+            </div>
         </div>
     </div>
 </body>
