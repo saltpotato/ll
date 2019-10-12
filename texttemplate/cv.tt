@@ -70,14 +70,16 @@
 {{ template "entries" .Study }}
 \section{ {{- index .Titles "education" -}} }
 {{ template "entries" .Education }}
-\section{Programmiererfahrung}
-\cvline{.Net}{C\#, WPF, WinForms, Visual Studio 15/17, Powershell}
-\cvline{C++}{C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk}
-\cvline{Datenbanken}{MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL}
-\cvline{Sonstiges}{Tortoise Svn, - Git, Wix, InnoSetup }
+\section{ {{- index .Titles "experience" -}} }
+{{- range $key, $val := .Experience -}} 
+\cvline{ {{- $key -}} }{ {{- $val -}} }
+{{end -}}
 \section{ {{- index .Titles "interests" -}} }
 \cvline{}{ 
-    {{- range .Interests}} {{.}},{{end -}}
+    {{- range $idx, $interest := .Interests -}} 
+        {{- if $idx}}, {{end -}}
+        {{- $interest -}}
+    {{end -}}
 }
 
 \renewcommand{\listitemsymbol}{-} % change the symbol for lists

@@ -9,7 +9,8 @@
         "professional":"Berufserfahrung",
         "study": "Studium", 
         "school": "Schulausbildung",
-        "interests" : "Hobbies"
+        "interests" : "Hobbies",
+        "experience" : "Software Erfahrung"
     },
     "professional": 
     [
@@ -209,11 +210,17 @@
         {
             "from": "1986--1994",
             "type": "Realschule",
-            "org": "Ekkehardt Realschule",
+            "org": "Ekkehard Realschule",
             "orglink": "http://www.ekkehard-rs.de/",
             "where": "Singen",
             "does": "Mittlere Reife"
         }
     ],
+    "experience": {
+        ".Net":"C-Sharp, WPF, WinForms, Visual Studio 15/17, Powershell",
+        "C++": "C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk", 
+        "Datenbanken" : "MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL",
+        "Sonstiges" : "Tortoise Svn, - Git, Wix, InnoSetup"
+    },
     "interests": ["Laufen", "E-Biken", "Surfen"]
 }

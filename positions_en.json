@@ -9,7 +9,8 @@
         "professional":"Professional experience",
         "study": "Study", 
         "school": "Education",
-        "interests" : "Interests"
+        "interests" : "Interests",
+        "experience" : "Software experience"
     },
     "professional": 
     [
@@ -209,11 +210,17 @@
         {
             "from": "1986--1994",
             "type": "Secondary school",
-            "org": "Ekkehardtsecondary school",
+            "org": "Ekkehard secondary school",
             "orglink": "http://www.ekkehard-rs.de/",
             "where": "Singen",
             "does": "Middle maturity"
         }
     ],
+    "experience": {
+        ".Net":"C-Sharp, WPF, WinForms, Visual Studio 15/17, Powershell",
+        "C++": "C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk", 
+        "Databases" : "MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL",
+        "Tools" : "Tortoise Svn, - Git, Wix, InnoSetup"
+    },
     "interests": ["Running", "e-biking", "surfing"]
 }

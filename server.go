@@ -34,6 +34,7 @@ type CV struct {
 	Professional []Position `json:"professional"`
 	Study        []Position `json:"study"`
 	Education    []Position `json:"education"`
+	Experience   map[string]string
 	Interests    []string
 }
 
@@ -183,7 +184,7 @@ func main() {
 	http.HandleFunc("/de/", switchToDE)
 	http.HandleFunc("/en/cv.pdf", exportLatex)
 	http.HandleFunc("/de/cv.pdf", exportLatex)
-	http.HandleFunc("/bower_components/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/node_modules/", func(w http.ResponseWriter, r *http.Request) {
 		path := "wwwroot/" + r.URL.Path[1:]
 		if strings.HasSuffix(path, ".css") {
 			http.ServeFile(w, r, path)
@@ -210,7 +211,7 @@ func main() {
 
 	})
 
-	err := http.ListenAndServeTLS(":443", "https-server.crt", "https-server.key", nil)
+	err := http.ListenAndServeTLS(":443", "cert.pem", "key.pem", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

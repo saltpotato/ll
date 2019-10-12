@@ -5,11 +5,11 @@
     <title>Martin Schulze</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
     <style>
         .table-dark.table-bordered {
@@ -90,7 +90,11 @@
                                     <strong>{{$p.Type}}</strong>
                                 </div>
                                 <div class="col-sm">
+                                    {{- if $p.OrgLink -}}
                                     <i><a href={{$p.OrgLink}}>{{$p.Org}}</a></i>
+                                    {{ else }}
+                                    <i>{{$p.Org}}</i>
+                                    {{ end }}
                                 </div>
                                 <div class="col-sm">
                                     {{$p.Where}}
