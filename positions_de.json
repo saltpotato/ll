@@ -8,7 +8,8 @@
     "titles": {
         "professional":"Berufserfahrung",
         "study": "Studium", 
-        "school": "Schulausbildung"
+        "school": "Schulausbildung",
+        "interests" : "Hobbies"
     },
     "professional": 
     [
@@ -83,17 +84,18 @@
             "orglink": "https://www.createctrl.com/de",
             "where": "München",
             "does": "Software für TV, VoD und Radio",
-            "myarea": "Tool-Familie „Explorer“, „Control Center“, „Planung und Redaktion“ und die „Programminformation“",
+            "myarea": "Produktfamilie CreateCtrl Suite Desktop applications",
             "topics": [
-                "Entwicklung von \\0,Programm, Rundfunk- und Video-on-Demand-Planung (VoD)",
-                "Wartung eines MFC-UIs mit neuen Felder und Masken, Pl-Sql Im- und Export-Procedures",
+                "Windows-Apps für \\0,Programm, Rundfunk- und Video-on-Demand-Planung (VoD)",
+                "\\beginitemize",
+                "Wartung des MFC-UIs, neue Features, Fehlerbehebungen, pl-sql Backend",
+                "\\enditemize",
                 "Entwicklung einer neuen VoD-Planung mit WPF, Spring.NET und NHibernate",
                 "\\beginitemize",
                 "Entwurf und Implementierung des klassenbasierten OR Mappings",
                 "NHibernate Caching-Optimierung",
                 "Implementierung der Suche, Export- und Middlewarefunktionen, Drag'n'Drop",
-                "\\enditemize",
-                "Testbereitstellung und Go-Live"
+                "\\enditemize"
             ],
             "href": [
                 "http://www.createctrl.com/createctrlsuite.html"
@@ -108,13 +110,12 @@
             "does": "Systeme zur Fabrik- und Logistikplanung",
             "myarea": "Entwicklung von Malaga-V3",
             "topics": [
-                "Konzeption Entwicklung der Qt-UI für \\0,Malaga-V3",
-                "Registerkarten in den \\1,Planungsbereichen Produkt, Prozess und Ressource",
+                "Erstellung der UI für \\0,Malaga-V3 mit Qt",
                 "\\beginitemize",
-                "Entwicklung der Bereiche Administration, insbesondere GUI, Mehrsprachigkeit, Datenanbindung",
-                "Implementierung des Bibliothekskonzeptes",
-                "Anbindung des Clients an Bentley Microstation V8i über MFC und MDL",
-                "Layout-Kopierfunktion",
+                "\\1,Planungsbereichen Produkt, Prozess und Ressource",
+                "Administration, Internationalisierung, Datenanbindung",
+                "Bibliothekskonzeptes für Projektübergreifend verwendbare Objekte",
+                "Teile und kopiere Layout in Bentley Microstation V8i",
                 "Implementierung der Ableitung des \\2,Montagevorranggrafen zum Prozess",
                 "Aktualisierung der GUI über Multiuser",
                 "Implementierung des Reportingkonzeptes",
@@ -137,10 +138,10 @@
             "orglink": "https://www.wsw.de/",
             "where": "Gauting (München)",
             "does": "Hoch konfigurierbare IT-Logistiklösungen auf Basis von SAP und .Net",
-            "myarea": "JIT/JIS Systeme",
+            "myarea": "Just-in-time/sequence (JIT/JIS) Systeme",
             "topics": [
-                "Cliententwicklung basierend auf \\0,Just-in-Time-Standardsoftware",
-                "Datenbankentwicklung über SQL-Server und angeschlossener Prozesse",
+                "GUI basierend auf \\0,JIT-Software",
+                "JIT/JIS-Prozesse mit MS-SQL-Server",
                 "Visualisierung von Prozessabläufen (z.B. über Ampel), - Teilesequenzierung",
                 "Implementierung eines mobilen .Net Clients für Stapler und einen Barcode-Scanner",
                 "Export Prozessdaten nach Word"
@@ -213,5 +214,6 @@
             "where": "Singen",
             "does": "Mittlere Reife"
         }
-    ]
+    ],
+    "interests": ["Laufen", "E-Biken", "Surfen"]
 }

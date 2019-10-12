@@ -46,11 +46,11 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/{{lang}}">{{- enDe "Curriculum Vitae" "Lebenslauf" -}}  <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/cv.pdf{{lang}}">{{- enDe "Show PDF" "Zeige PDF" -}}</a>
+                <a class="nav-item nav-link" href="/{{lang}}/cv.pdf">{{- enDe "Show PDF" "Zeige PDF" -}}</a>
                 <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/{{lang}}" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{- enDe "English" "Deutsch" -}}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown09">
-                            {{ if eq lang ""}}
+                            {{ if eq lang "de"}}
                             <a class="dropdown-item" href="/en"><span class="flag-icon flag-icon-us"> </span>English</a>
                             {{ else }}
                             <a class="dropdown-item" href="/de"><span class="flag-icon flag-icon-de"> </span>Deutsch</a>
@@ -147,6 +147,12 @@
             <div class="col-sm">
                 {{- index .Titles "education" -}}
                 {{- template "entries" .Education -}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                {{- index .Titles "interests" -}}
+                
             </div>
         </div>
     </div>

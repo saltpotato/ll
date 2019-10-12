@@ -64,19 +64,21 @@
 \cvline{Geboren am}{25.05.1978 in Singen am Hohentwiel}
 \cvline{\house}{Eschenbachstraße 29, 81549 München}
 \cvline{\mobilephonesymbol}{\href{tel:015236362571}{01523 6 36 25 71} }
-\section{Berufserfahrung}
+\section{ {{- index .Titles "professional" -}} }
 {{ template "entries" .Professional }}
-\section{Studium}
+\section{ {{- index .Titles "study" -}} }
 {{ template "entries" .Study }}
-\section{Schul- und Berufsausbildung}
+\section{ {{- index .Titles "education" -}} }
 {{ template "entries" .Education }}
 \section{Programmiererfahrung}
 \cvline{.Net}{C\#, WPF, WinForms, Visual Studio 15/17, Powershell}
 \cvline{C++}{C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk}
 \cvline{Datenbanken}{MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL}
 \cvline{Sonstiges}{Tortoise Svn, - Git, Wix, InnoSetup }
-\section{Hobbies}
-\cvline{}{Laufen, E-Biken, Surfen}
+\section{ {{- index .Titles "interests" -}} }
+\cvline{}{ 
+    {{- range .Interests}} {{.}},{{end -}}
+}
 
 \renewcommand{\listitemsymbol}{-} % change the symbol for lists
 \nocite{*}

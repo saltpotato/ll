@@ -34,6 +34,7 @@ type CV struct {
 	Professional []Position `json:"professional"`
 	Study        []Position `json:"study"`
 	Education    []Position `json:"education"`
+	Interests    []string
 }
 
 var funcMap = map[string]interface{}{
@@ -76,15 +77,7 @@ var funcMap = map[string]interface{}{
 		if isEn {
 			return "en"
 		}
-		return ""
-	},
-	"flagIcon": func(lang string) string {
-		isEn := lang == "en"
-		if isEn {
-			return "flag-icon flag-icon-us"
-		}
-		return "flag-icon flag-icon-us"
-
+		return "de"
 	},
 }
 
@@ -121,6 +114,14 @@ func ServeIndexHTML(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
+func jsonFileFromUrl(urlPath string) string {
+	if strings.Contains(urlPath, "/de") {
+		return "positions_de.json"
+	} else {
+		return "positions_en.json"
+	}
+}
+
 func switchToEN(w http.ResponseWriter, r *http.Request) {
 	cvJSONFile = "positions_en.json"
 	ServeIndexHTML(w, r)
@@ -131,7 +132,8 @@ func switchToDE(w http.ResponseWriter, r *http.Request) {
 }
 
 func exportLatex(w http.ResponseWriter, r *http.Request) {
-	jsonFile, err := os.Open(cvJSONFile)
+
+	jsonFile, err := os.Open(jsonFileFromUrl(r.URL.Path))
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
@@ -179,7 +181,8 @@ func main() {
 
 	http.HandleFunc("/en/", switchToEN)
 	http.HandleFunc("/de/", switchToDE)
-	http.HandleFunc("/cv.pdf", exportLatex)
+	http.HandleFunc("/en/cv.pdf", exportLatex)
+	http.HandleFunc("/de/cv.pdf", exportLatex)
 	http.HandleFunc("/bower_components/", func(w http.ResponseWriter, r *http.Request) {
 		path := "wwwroot/" + r.URL.Path[1:]
 		if strings.HasSuffix(path, ".css") {
