@@ -45,34 +45,37 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/{{lang}}">{{- enDe "Curriculum Vitae" "Lebenslauf" -}}  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/{{lang}}">{{- enDe "Curriculum Vitae" "Lebenslauf" -}} <span
+                        class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/{{lang}}/cv.pdf">{{- enDe "Show PDF" "Zeige PDF" -}}</a>
                 <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/{{lang}}" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{- enDe "English" "Deutsch" -}}</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown09">
-                            {{ if eq lang "de"}}
-                            <a class="dropdown-item" href="/en"><span class="flag-icon flag-icon-us"> </span>English</a>
-                            {{ else }}
-                            <a class="dropdown-item" href="/de"><span class="flag-icon flag-icon-de"> </span>Deutsch</a>
-                            {{ end }}
-                        </div>
-                    </li>
+                    <a class="nav-link dropdown-toggle" href="/{{lang}}" id="dropdown09" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">{{- enDe "English" "Deutsch" -}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        {{ if eq lang "de"}}
+                        <a class="dropdown-item" href="/en"><span class="flag-icon flag-icon-us"> </span>English</a>
+                        {{ else }}
+                        <a class="dropdown-item" href="/de"><span class="flag-icon flag-icon-de"> </span>Deutsch</a>
+                        {{ end }}
+                    </div>
+                </li>
             </div>
         </div>
     </nav>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">
-                Persönliche Daten
-
+                {{- index .Titles "about" -}}
+                {{range $key, $val := .About}}
                 <div class="row">
-                    <div class="col-sm-3">
-                        Geboren am
-                    </div>
+                    <div class="col-sm-3">{{$key}}</div>
                     <div class="col-sm-9">
-                        25.05.1978 in Singen am Hohentwiel
+                        <div class="col-sm">
+                            {{$val}}
+                        </div>
                     </div>
                 </div>
+                {{end}}
             </div>
         </div>
         <div class="row">
@@ -154,28 +157,33 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm">
                 {{- index .Titles "experience" -}}
-            </div>
-                <div class="col-sm-6">
-                    {{- range $idx, $interest := .Interests -}} 
-                    {{- if $idx}}, {{end -}}
-                    {{- $interest -}}
-                    {{end -}}
+                {{range $key, $val := .Experience}}
+                <div class="row">
+                    <div class="col-sm-3">{{$key}}</div>
+                    <div class="col-sm-9">
+                        <div class="col-sm">
+                            {{$val}}
+                        </div>
+                    </div>
                 </div>
-            
+                {{end}}
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
                 {{- index .Titles "interests" -}}
             </div>
-                <div class="col-sm-6">
-                    {{- range $idx, $interest := .Interests -}} 
-                    {{- if $idx}}, {{end -}}
-                    {{- $interest -}}
-                    {{end -}}
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-3">     </div>
+                    <div class="col-sm-9">
+                                {{- .Interests -}}
+                    </div>
                 </div>
-        
+            </div>
+
         </div>
     </div>
 </body>

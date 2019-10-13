@@ -1,16 +1,17 @@
 {
-    "personal": {
-        "birthdate": "25.05.1978",
-        "birthplace": "Singen at Hohentwiel",
-        "address": "Eschenbachstr. 29, 81549 Munich, Germany",
-        "cell": "+4915782951831"
-    },
     "titles": {
         "professional":"Professional experience",
         "study": "Study", 
         "school": "Education",
         "interests" : "Interests",
-        "experience" : "Software experience"
+        "experience" : "Software experience",
+        "about" : "About"
+    },
+    "about": {
+        "Date of birth": "25.05.1978",
+        "Place of birth": "Singen at Hohentwiel",
+        "Postal address": "Eschenbachstr. 29, 81549 Munich, Germany",
+        "Cell": "+4915782951831"
     },
     "professional": 
     [
@@ -222,5 +223,5 @@
         "Databases" : "MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL",
         "Tools" : "Tortoise Svn, - Git, Wix, InnoSetup"
     },
-    "interests": ["Running", "e-biking", "surfing"]
+    "interests": "Running, e-biking, surfing"
 }

@@ -1,16 +1,17 @@
 {
-    "personal": {
-        "birthdate": "25.05.1978",
-        "birthplace": "Singen am Hohentwiel",
-        "address": "Eschenbachstrasse 29, 81549 München",
-        "cell": "+4915782951831"
-    },
     "titles": {
         "professional":"Berufserfahrung",
         "study": "Studium", 
         "school": "Schulausbildung",
         "interests" : "Hobbies",
-        "experience" : "Software Erfahrung"
+        "experience" : "Software Erfahrung",
+        "about" : "Persönliche Daten"
+    },
+    "about": {
+        "Gebohren am": "25.05.1978",
+        "Geburtsort": "Singen am Hohentwiel",
+        "Adresse": "Eschenbachstrasse 29, 81549 München",
+        "Telefon": "+4915782951831"
     },
     "professional": 
     [
@@ -222,5 +223,5 @@
         "Datenbanken" : "MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL",
         "Sonstiges" : "Tortoise Svn, - Git, Wix, InnoSetup"
     },
-    "interests": ["Laufen", "E-Biken", "Surfen"]
+    "interests": "Laufen, E-Biken, Surfen"
 }

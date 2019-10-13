@@ -22,20 +22,15 @@ type Position struct {
 	Href                                          []string
 }
 
-//Personal Stammdaten
-type Personal struct {
-	BirthDate, BirthPlace, Address, Cell string
-}
-
 //CV struct
 type CV struct {
-	Personal     Personal
 	Titles       map[string]string
+	About        map[string]string
 	Professional []Position `json:"professional"`
 	Study        []Position `json:"study"`
 	Education    []Position `json:"education"`
 	Experience   map[string]string
-	Interests    []string
+	Interests    string
 }
 
 var funcMap = map[string]interface{}{

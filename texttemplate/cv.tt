@@ -75,12 +75,7 @@
 \cvline{ {{- $key -}} }{ {{- $val -}} }
 {{end -}}
 \section{ {{- index .Titles "interests" -}} }
-\cvline{}{ 
-    {{- range $idx, $interest := .Interests -}} 
-        {{- if $idx}}, {{end -}}
-        {{- $interest -}}
-    {{end -}}
-}
+\cvline{}{ {{- .Interests -}} }
 
 \renewcommand{\listitemsymbol}{-} % change the symbol for lists
 \nocite{*}
