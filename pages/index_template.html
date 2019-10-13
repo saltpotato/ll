@@ -154,10 +154,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm">
-                {{- index .Titles "interests" -}}
-                
+            <div class="col-sm-3">
+                {{- index .Titles "experience" -}}
             </div>
+                <div class="col-sm-6">
+                    {{- range $idx, $interest := .Interests -}} 
+                    {{- if $idx}}, {{end -}}
+                    {{- $interest -}}
+                    {{end -}}
+                </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                {{- index .Titles "interests" -}}
+            </div>
+                <div class="col-sm-6">
+                    {{- range $idx, $interest := .Interests -}} 
+                    {{- if $idx}}, {{end -}}
+                    {{- $interest -}}
+                    {{end -}}
+                </div>
+        
         </div>
     </div>
 </body>

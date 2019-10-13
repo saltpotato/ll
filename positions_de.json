@@ -23,7 +23,7 @@
             "does": "Fahrwerkvermessung, Bremsenprüfung, Prüfstrassen und Scheinwerfereinstellung",
             "myarea": "Bremsenprüfung",
             "topics": [
-                "Further development of new testing software \\0,ICPerform-Truck",
+                "Weiterentwicklung von Bremsenprüfsstand Software \\0,ICPerform-Truck",
                 "Mitentwicklung \\1,ICPerform-Car für zweiachsige PKW",
                 "Erstellung eines Zwischenreleases für ICperform-Truck",
                 "Betreuung der Anbindung bestehender \\2,MRS-433 Druckluftsensoren bezüglich Wegfahralarm und Messstetigkeiten",
