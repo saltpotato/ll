@@ -173,26 +173,29 @@ func exportLatex(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, strings.Replace(texOutFilePath, ".tex", ".pdf", 1))
 }
 
+func toWwwRoot(w http.ResponseWriter, r *http.Request) {
+	path := "wwwroot/" + r.URL.Path[1:]
+	if strings.HasSuffix(path, ".css") || strings.HasSuffix(path, ".jpg") {
+		http.ServeFile(w, r, path)
+	} else {
+
+		file, err := os.Open(path)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		http.ServeContent(w, r, "x", time.Time{}, file)
+	}
+}
+
 func main() {
 
 	http.HandleFunc("/en/", switchToEN)
 	http.HandleFunc("/de/", switchToDE)
 	http.HandleFunc("/en/cv.pdf", exportLatex)
 	http.HandleFunc("/de/cv.pdf", exportLatex)
-	http.HandleFunc("/node_modules/", func(w http.ResponseWriter, r *http.Request) {
-		path := "wwwroot/" + r.URL.Path[1:]
-		if strings.HasSuffix(path, ".css") {
-			http.ServeFile(w, r, path)
-		} else {
-
-			file, err := os.Open(path)
-			if err != nil {
-				fmt.Println(err)
-				os.Exit(1)
-			}
-			http.ServeContent(w, r, "x", time.Time{}, file)
-		}
-	})
+	http.HandleFunc("/node_modules/", toWwwRoot)
+	http.HandleFunc("/images/", toWwwRoot)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 

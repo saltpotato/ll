@@ -63,7 +63,8 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="row">
+            <div class="container-fluid">
+                    <div class="row">
             <div class="col-sm">
                 {{- index .Titles "about" -}}
                 {{range $key, $val := .About}}
@@ -77,6 +78,11 @@
                 </div>
                 {{end}}
             </div>
+            <div class="col-sm-2">
+                    <img src="/images/IMG_9105_smaller.JPG" alt="foto" width="142">
+                </div>
+                </div>
+
         </div>
         <div class="row">
             <div class="col-sm">

@@ -1,0 +1,136 @@
+\documentclass[11pt,a4paper]{moderncv}
+\thispagestyle{empty}
+% moderncv themes
+\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\AtBeginDocument{\recomputelengths}         
+%\AtBeginDocument{\hypersetup{hidelinks,linkcolor=blue}}
+\usepackage{pdfpages}           
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\newcommand{\myhref}[3][color1]{\href{#2}{\color{#1}{#3}}}%
+
+\firstname{Martin}
+\familyname{Schulze}
+\photo[64pt]{../images/IMG_9105_smaller.JPG}                         % '64pt' is the height the picture must be resized to and '+picture' is the name of the picture file; optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%------------------------------6----------------------------------------------------
+\def\house{\hbox{\kern3pt \vbox to13pt{}% 
+   \pdfliteral{q 0 0 m 0 5 l 5 10 l 10 5 l 10 0 l 7 0 l 7 5 l 3 5 l 3 0 l f
+               1 j 1 J -2 5 m 5 12 l 12 5 l S Q }%
+   \kern 13pt}}
+
+\begin{document}
+\newgeometry{top=23mm,bottom=1cm,left=27mm,right=23mm,nohead,nofoot}
+
+\maketitle
+\section{Persönliche Daten}
+\cvline{Geboren am}{25.05.1978 in Singen am Hohentwiel}
+\cvline{\house}{Eschenbachstraße 29, 81549 München}
+\cvline{\mobilephonesymbol}{\href{tel:015236362571}{01523 6 36 25 71} }
+\section{Berufserfahrung}
+\cventry{Juli 2018--heute}{Softwareentwickler}{Beissbarth GmbH}{München}{}{Fahrwerkvermessung, Bremsenprüfung, Prüfstrassen und Scheinwerfereinstellung \begin{itemize} 
+\item Weiterentwicklung von Bremsenprüfsstand Software \myhref{http://www.icperform.com}{ICPerform-Truck}
+\item Mitentwicklung \myhref{https://play.google.com/store/apps/details?id=beissbarth.icperform.tablet.car&hl=de_DE}{ICPerform-Car} für zweiachsige PKW
+\item Erstellung eines Zwischenreleases für ICperform-Truck
+\item Betreuung der Anbindung bestehender \myhref{https://www.amandaequipment.com/en/equipment/break-and-chassis-equipment/break-service-equipment-accessories/brake-system-air-pressure-gauge-set-mrs-433}{MRS-433} Druckluftsensoren bezüglich Wegfahralarm und Messstetigkeiten
+\item Anbindung Druckluftsensoren neuer Generation
+\item Gelegentlicher vor Ort Einsatz in Werkstätten    
+ \end{itemize} } 
+\cventry{April 2014--Juni 2018}{Softwareentwickler}{Distec GmbH}{Germering}{}{Spezialist für LCD Flachbildschirm-Lösungen \begin{itemize} 
+\item VideoPoster Mediaplayer Anwendung \myhref{https://www.distec.de/service/downloads/mediaplayer-downloads/}{ACC3}
+\item \myhref{http://www.datadisplay-group.com/fileadmin/pdf/Finished_products/WEBPOSTER/Datasheet_WEB-Poster.pdf}{WebPoster-Firmware,} Debian basiert
+\item \myhref{http://www.datadisplay-group.com/tft-controller/industrial-mediaplayers/videoposter-iii/}{VideoPoster-III}
+\item Betreuung der Modifikation \myhref{https://www.datadisplay-group.de/produkte/kundenspezifische-loesungen/referenzprojekte/}{LED-Anzeigen} am Flughafen San Francisco
+\item \myhref{http://www.datadisplay-group.com/tft-controller/tft-controller-usb-lan/artistausb-eco/}{USB} Desktop Extension Treiber in Abstimmung mit \myhref{https://spacedesk.net/de/}{Treiberhersteller}
+\item C++ Produktions-Tool für \myhref{https://www.datadisplay-group.de/produkte/kitloesungen/mit-arm-raspberry-pi/}{Artista-Iot}
+\item Evaluation von Windows-Iot auf Artista IoT zur Verwendung als HMI-Platform
+\item Erstellen einiger QML \myhref{https://www.youtube.com/watch?v=tnY_23eRoyU}{Demos}
+\item Vereinfachter Kaffeeautomat-HMI mit \myhref{https://www.embedded-wizard.de/}{Embedded-Wizard}
+\item .Net Tool für Luminanzkalibration und -profiling mit Luxmetern \myhref{https://www.xrite.com/de/categories/calibration-profiling/i1display-pro}{i1Display-Pro} und \myhref{https://gossen-photo.de/mavolux-5032-b-usb/}{Gossen-Mavolux} unter Verwendung von \myhref{https://www.argyllcms.com/}{Argyll-CMS}
+\item Betreuung von \myhref{https://www.distec.de/produkte/tft-controller/konfigurations-software/}{Chandler/Mars/SmartLed-Rover} und -Prep Apps
+\item Golang Tool zur Boardkonfiguration mit RS232
+\item Powershell Buildskripte für Debian-builds mit VirtualBox (vboxmanage)
+\item Umstellung Builds auf Symantec Extended Validation Code Signing
+\item Umstellung der meisten Qt-Anwendungen von Qt4 auf Qt5
+\item Ansprechpartner rund um Windows innerhalb der Entwicklunsabteilung    
+ \end{itemize} } 
+\cventry{Januar 2012--Oktober 2013}{Softwareentwickler}{CreateCtrl AG}{München}{}{Software für TV, VoD und Radio \begin{itemize} 
+\item Windows-Apps für \myhref{http://www.createctrl.com/createctrlsuite.html}{Programm,} Rundfunk- und Video-on-Demand-Planung (VoD)
+\begin{itemize}
+\item Wartung des MFC-UIs, neue Features, Fehlerbehebungen, pl-sql Backend
+\end{itemize}
+\item Entwicklung einer neuen VoD-Planung mit WPF, Spring.NET und NHibernate
+\begin{itemize}
+\item Entwurf und Implementierung des klassenbasierten OR Mappings
+\item NHibernate Caching-Optimierung
+\item Implementierung der Suche, Export- und Middlewarefunktionen, Drag'n'Drop
+\end{itemize}    
+ \end{itemize} } 
+\cventry{Juli 2005--Dezember 2011}{Softwareentwickler}{ZIP Industrieplanung}{München}{}{Systeme zur Fabrik- und Logistikplanung \begin{itemize} 
+\item Erstellung der UI für \myhref{http://www.exu.de/web/de/malagav3}{Malaga-V3} mit Qt
+\begin{itemize}
+\item \myhref{http://www.exu.de/web/de/features}{Planungsbereichen} Produkt, Prozess und Ressource
+\item Administration, Internationalisierung, Datenanbindung
+\item Bibliothekskonzeptes für Projektübergreifend verwendbare Objekte
+\item Teile und kopiere Layout in Bentley Microstation V8i
+\item Implementierung der Ableitung des \myhref{http://www.exu.de/web/images/stories/deu/malaga/img4.jpg}{Montagevorranggrafen} zum Prozess
+\item Aktualisierung der GUI über Multiuser
+\item Implementierung des Reportingkonzeptes
+\item Auswertungsfunktionen nach Powerpoint
+\item Auslastungs-, Fahrplan-, und Bestands- Diagramm, \myhref{http://www.exu.de/web/images/stories/deu/malaga/img5.jpg}{Prozesseditor}
+\end{itemize}
+\item Bereitstellung von Builds und Pflege des Build-Systems    
+ \end{itemize} } 
+\cventry{November 2003--Juni 2005}{Softwareentwickler}{WSW Software GmbH}{Gauting (München)}{}{Hoch konfigurierbare IT-Logistiklösungen auf Basis von SAP und .Net \begin{itemize} 
+\item GUI basierend auf \myhref{http://www.wsw-software.de/jis/wsw-jit/}{JIT-Software}
+\item JIT/JIS-Prozesse mit MS-SQL-Server
+\item Visualisierung von Prozessabläufen (z.B. über Ampel), - Teilesequenzierung
+\item Implementierung eines mobilen .Net Clients für Stapler und einen Barcode-Scanner
+\item Export Prozessdaten nach Word    
+ \end{itemize} } 
+\cventry{März 2003--Oktober 2003}{Freiberuflicher Softwareentwickler}{Baumer Group (ehem. Massen Machine Vision)}{Konstanz}{}{Hersteller von Sensoren, Drehgebern, Messinstrumenten und Komponenten für die automatisierte Bildverarbeitung \begin{itemize} 
+\item Pflege der Qt-GUI mit ca. 20 Masken Umfang
+\item Konvertierung Konfigurationsdaten von Ini auf Xml    
+ \end{itemize} } 
+
+\section{Studium}
+\cventry{1998--2003}{Technischer Informatik}{Fachhochschule Konstanz}{Konstanz}{}{Vertiefungsrichtung Kommunikationssysteme und Softwareentwicklung}     
+
+\cventry{März--Dez. 2002}{Diplomarbeit}{University of the Western Cape}{Bellville, Südafrika}{}{Gesichtsausdruckserkennung mit Support Vector Machines}     
+
+\cventry{März 1999 und 2001 für je ein Semester}{Praxissemester}{Aluminium-Walzwerke Singen GmbH und Georg Fischer Piping Systems AG}{Singen und Schaffhausen (Schweiz)}{}{in IT Administration und Software \begin{itemize} 
+\item Weiterentwicklung automatischer Softwareverteilung im Intranet
+\item Netzwerkmonitor als Intranet-Website (Apache webserver)    
+ \end{itemize} } 
+
+\section{}
+\cventry{1994--1996}{Berufskolleg 1+2}{Kaufmännische Schulen}{Radolfzell}{}{Fachhochschulreife}     
+
+\cventry{1986--1994}{Realschule}{Ekkehard Realschule}{Singen}{}{Mittlere Reife}     
+
+
+\section{Software Erfahrung}\cvline{.Net}{C-Sharp, WPF, WinForms, Visual Studio 15/17, Powershell}
+\cvline{C++}{C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk}
+\cvline{Datenbanken}{MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL}
+\cvline{Sonstiges}{Tortoise Svn, - Git, Wix, InnoSetup}
+\section{Hobbies}
+\cvline{}{Laufen, E-Biken, Surfen}
+
+\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+\nocite{*}
+\bibliographystyle{plain}
+
+\end{document}
