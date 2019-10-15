@@ -63,26 +63,35 @@
         </div>
     </nav>
     <div class="container-fluid">
-            <div class="container-fluid">
-                    <div class="row">
+        <div class="row"> 
+            <div class="col-sm">
+                    <img src="/images/IMG_9105_smaller.JPG" alt="foto" width="142">
+            </div>
+            <div class="flex-container flex-end align-self-end" >
+                    <div class="row" style="font-size: 52px;">
+                        <div class="col-sm align-self-end" style="color: rgb(185, 185, 185);">Martin</div>
+                        <div class="col-sm" style="color: rgb(145, 145, 145);">Schulze</div> 
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr style="border-top: 3px solid rgb(185, 185, 185);"></hr>
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-sm">
                 {{- index .Titles "about" -}}
                 {{range $key, $val := .About}}
                 <div class="row">
                     <div class="col-sm-3">{{$key}}</div>
                     <div class="col-sm-9">
-                        <div class="col-sm">
                             {{$val}}
-                        </div>
                     </div>
                 </div>
                 {{end}}
             </div>
-            <div class="col-sm-2">
-                    <img src="/images/IMG_9105_smaller.JPG" alt="foto" width="142">
-                </div>
-                </div>
-
+            
         </div>
         <div class="row">
             <div class="col-sm">

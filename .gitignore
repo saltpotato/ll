@@ -11,3 +11,4 @@ pages/cv.pdf
 texput.log
 wwwroot/node_modules/
 wwwroot/yarn.lock
+wwwroot/tex/cv.pdf
