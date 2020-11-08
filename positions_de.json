@@ -8,16 +8,29 @@
         "about" : "Persönliche Daten"
     },
     "about": {
-        "Gebohren am": "25.05.1978",
-        "Geburtsort": "Singen am Hohentwiel",
-        "Adresse": "Eschenbachstrasse 29, 81549 München",
-        "Telefon": "+4915782951831"
+        "birth": "25.05.1978 in Singen am Hohentwiel",
+        "address": "Brunnenstrasse 5, 9470 Buchs SG (CH)",
+        "mobile": "+4915782951831"
     },
     "professional": 
     [
+		{
+			"from": "Oktober 2019--heute",
+			"type": "Fullstack Entwickler",
+			"org": "ELPRO-BUCHS AG",
+			"orglink": "https://www.elpro.com/de/",
+            "where": "Buchs SG",
+			"does": "Monitoring Lösungen für Pharma und Healthcare",
+			"myarea": "ELPRO Cloud - die neue Lösung zur Temperaturüberwachung",
+			"topics": [
+				"Entwicklung Microservices mit ASP.NET, Postgres und RabbitMq",
+				"ReactJS bezüglich Zahlungsabwicklung und Lizensierung",
+				"Pflege AWS Deployment"
+			]
+		},
         {
-            "from": "Juli 2018--heute",
-            "type": "Softwareentwickler",
+            "from": "Juli 2018--Juli 2019",
+            "type": "Softwareentwickler .NET",
             "org": "Beissbarth GmbH",
             "orglink": "https://beissbarth-online.com/de/home/",
             "where": "München",
@@ -28,8 +41,8 @@
                 "Mitentwicklung \\1,ICPerform-Car für zweiachsige PKW",
                 "Erstellung eines Zwischenreleases für ICperform-Truck",
                 "Betreuung der Anbindung bestehender \\2,MRS-433 Druckluftsensoren bezüglich Wegfahralarm und Messstetigkeiten",
-                "Anbindung Druckluftsensoren neuer Generation",
-                "Gelegentlicher vor Ort Einsatz in Werkstätten"
+                "Anbindung Druckluftsensoren neuerer Generation",
+                "Gelegentlicher vor Ort Einsatz beim Kunden"
             ],
             "href": [
                 "http://www.icperform.com",
@@ -39,7 +52,7 @@
         },
         {
             "from": "April 2014--Juni 2018",
-            "type": "Softwareentwickler",
+            "type": "Softwareentwickler Windows Apps",
             "org": "Distec GmbH",
             "orglink": "https://www.distec.de/unternehmen/ueber-distec/",
             "where": "Germering",
@@ -81,7 +94,7 @@
         },
         {
             "from": "Januar 2012--Oktober 2013",
-            "type": "Softwareentwickler",
+            "type": "Softwareentwickler .NET",
             "org": "CreateCtrl AG",
             "orglink": "https://www.createctrl.com/de",
             "where": "München",
@@ -105,7 +118,7 @@
         },
         {
             "from": "Juli 2005--Dezember 2011",
-            "type": "Softwareentwickler",
+            "type": "Softwareentwickler C++",
             "org": "ZIP Industrieplanung",
             "orglink": "http://www.zip.de",
             "where": "München",
@@ -135,7 +148,7 @@
         },
         {
             "from": "November 2003--Juni 2005",
-            "type": "Softwareentwickler",
+            "type": "Softwareentwickler .NET",
             "org": "WSW Software GmbH",
             "orglink": "https://www.wsw.de/",
             "where": "Gauting (München)",
@@ -183,20 +196,6 @@
             "orglink": "https://www.uwc.ac.za/Pages/default.aspx",
             "where": "Bellville, Südafrika",
             "does": "Gesichtsausdruckserkennung mit Support Vector Machines"
-        },
-        {
-            "from": "März 1999 und 2001 für je ein Semester",
-            "type": "Praxissemester",
-            "org": "Aluminium-Walzwerke Singen GmbH und Georg Fischer Piping Systems AG",
-            "orglink": "",
-            "where": "Singen und Schaffhausen (Schweiz)",
-            "does": "in IT Administration und Software",
-            "myarea": "",
-            "topics": [
-                "Weiterentwicklung automatischer Softwareverteilung im Intranet",
-                "Netzwerkmonitor als Intranet-Website (Apache webserver)"
-            ],
-            "href": []
         }
     ],
     "education": [
@@ -218,10 +217,10 @@
         }
     ],
     "experience": {
+        "C++": "C++ 11, Managed C++, STL, Qt 5, Windows 10-Sdk", 
         ".Net":"C-Sharp, WPF, WinForms, Visual Studio 15/17, Powershell",
-        "C++": "C++ 11, Managed C++, Standard-Library, Qt, USBDM, Windows 10-Sdk", 
-        "Datenbanken" : "MS-Sql, OleDB, T-SQL, Stored Procedures, NHibernate, PL-SQL",
-        "Sonstiges" : "Tortoise Svn, - Git, Wix, InnoSetup"
+        "Datenbanken" : "Postgres, Oracle 9/10i, NHibernate",
+        "SCM" : "Tortoise Git, Svn, Gitlab"
     },
     "interests": "Laufen, E-Biken, Surfen"
 }

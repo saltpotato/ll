@@ -145,7 +145,7 @@ func exportLatex(w http.ResponseWriter, r *http.Request) {
 	// jsonFile's content into 'users' which we defined above
 	json.Unmarshal(byteValue, &cv)
 
-	tmpl, err := tt.New("cv.tt").Funcs(funcMap).ParseFiles("texttemplate/cv.tt")
+	tmpl, err := tt.New("cv.tt").Funcs(funcMap).ParseFiles("cv.tt")
 	if err != nil {
 		fmt.Println(err)
 		return

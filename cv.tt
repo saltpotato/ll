@@ -61,9 +61,9 @@
 
 \maketitle
 \section{Persönliche Daten}
-\cvline{Geboren am}{25.05.1978 in Singen am Hohentwiel}
-\cvline{\house}{Eschenbachstraße 29, 81549 München}
-\cvline{\mobilephonesymbol}{\href{tel:015236362571}{01523 6 36 25 71} }
+\cvline{Geboren am}{ {{- index .About "birth" -}} }
+\cvline{\house}{ {{- index .About "address" -}} }
+\cvline{\mobilephonesymbol}{ {{- index .About "mobile" -}} }
 \section{ {{- index .Titles "professional" -}} }
 {{ template "entries" .Professional }}
 \section{ {{- index .Titles "study" -}} }
